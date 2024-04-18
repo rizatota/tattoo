@@ -1,93 +1,119 @@
-@media screen and (max-width: 768px) {
-    .slide {
-        flex: 0 0 50%; /* Each slide takes up 50% of the slider on mobile */
-    }
-
-    #prevBtn,
-    #nextBtn {
-        font-size: 12px; /* Adjust button font size for mobile */
-        padding: 8px; /* Adjust button padding for mobile */
-    }
-}
-
-/* Media query for carousel */
-@media screen and (max-width: 250px) {
-    #prevBtn,
-    #nextBtn {
-        font-size: 8px; /* Adjust button font size for mobile */
-        padding: 4px; 
-        margin:3px;/* Adjust button padding for mobile */
-    }
-}
-
-/* Media query for heroes */
-@media screen and (max-width: 500px) {
-    .grid {
-        grid-template-columns: auto !important; /* Change to a single column on mobile */
-    }
-
-    .right {
-        margin-top: 10px !important; /* Add margin between images on mobile */
-    }
-}
-
-/* Media query for heroes */
-@media screen and (max-width: 768px) {
-    .product-container {
-        flex-direction: column; /* Stack items vertically on mobile */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .product {
-        padding-left: 0; /* Remove left padding on mobile */
-        margin-top: 10px; /* Add margin between image and details */
-    }
-
-    .product button {
-        width: auto; /* Let the button take its content width */
-    }
-}
-
-
 html,body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
-.nav-bar{
+hr{
+    margin-top: 0 !important;
+}
+li{
+    list-style-type: none;
+}
+.blue{
+    color: blue;
+}
+.black{
+    font-weight: 900;
+}
+.header{
+    background-color: rgb(240, 240, 240);
+}
+.header .menu{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background-color: lightgrey;
+    justify-content: center;
 }
-.right-side>ul, .left-side>ul {
+.header div{
+    margin: 0 25px;
+}
+.left-side button{
+    border:none;
+    padding: 25px;
+}
+.left-side button:hover{
+    color: blue;
+    background-color: white; 
+}
+.left-side>ul, .right-side>ul {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    align-items: center; 
 }
 .ul-nav>li{
     margin: 10px 15px;
-    list-style-type: none;
     font-weight: bolder;
 }
 .middle input{
-    padding: 10px 100px;
+    padding: 10px 80px;
     border-right: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    outline: none;
 }
 .middle button{
-    padding: 10px;
-    background-color: blue;
+    background-color: rgb(22, 22, 96);
     color: white;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-   
+    border-bottom-right-radius: 5px;  
+}
+.middle>input ,.middle>button{
+    border: 1px solid black;
+}
+.header .left-service{
+    display: none;
+}
+.header .left-service img{
+    border-radius: 50%;
+}
+.header .left-service ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+}
+.header .mobile{    
+    display: none;
+    text-align: center;
+    justify-content: center;
+}
+.show-mobile {
+    border: none;
+    display: none;
+}
+.left-mobile {
+    display: none;
+    overflow-y: auto;
+}
+.left-mobile .dropdown {
+    padding: 10px;
+    display: none;  
+}
+.left-mobile .dropdown ul{
+    display:flex;
+    flex-direction: column;
 }
 .middle{
     display: flex;
     font-size: 1.4rem;
+    padding: 10px;
+}
+.bars{
+    border:none; 
+    display: none;  
+}
+.service-options {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+.left-service ,.right-service{
+    margin:  0 50px;
+}
+.left-service .logo-text {
+    color: blue;
+}
+.right-service ul li{
+    margin: 0px 10px;
 }
 .service-options ul{
     display: flex;
@@ -95,54 +121,50 @@ html,body{
     justify-content: center;
 }
 .service-options ul li{
-    list-style-type: none;
-    margin: 10px 15px;
     font-weight: 500;
     color: rgb(66, 65, 65);
 }
+.service-options img{
+    border-radius: 50%;
+}
 
-
-
+/*hero-container style*/
 .hero-container{
-
     margin-top: 20px;
 }
 .hero {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 800px 380px;
     gap: 10px; 
     justify-content: center; 
 }
+
 .right-column {
     display: flex;
     flex-direction: column;
     gap: 10px;  
 }
-img {
+.hero img {
     max-width: 100%;
     height: auto;
 }
 
-
-
+/*product-container style*/
 .product-container {
     display: flex;
     justify-content: center;  
-    flex-wrap: nowrap;  
+    flex-wrap:wrap;  
 }
-
 .product {
     width:150px;  
     padding: 10px;  
     text-align: center;  
     margin: 40px;
 }
-
 .product h3 {
     margin-bottom: 10px;  
     padding: 2px;
 }
-
 .product img {
     max-width: 100%;  
     height: auto;  
@@ -154,12 +176,11 @@ img {
     background-color: rgb(54, 133, 159);
     color: white;
 }
-
-
-
-
+/* carousel container style*/
 .carousel{
-    padding: 50px;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 100%;
 }
 .carousel h3{
     text-align: center;
@@ -169,64 +190,58 @@ img {
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 100%; /* Set maximum width */
+    max-width: 100%; 
   }
-  
-  .slider {
+.slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide {
-    flex: 0 0 20%; /* Each slide takes up 20% of the slider */
+}
+.slide {
+    flex: 0 0 20%; 
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
-  }
-  
-  .slide img {
+}
+.slide img {
     width: 100%;
-    max-height: 150px; /* Set maximum height for images */
+    max-height: 150px;
     object-fit: cover;
     border-radius: 5px;
-  }
-  
-  .info {
-    margin-top: 10px;
-  }
-  
-  #prevBtn,
-  #nextBtn {
+}
+.move-carousel {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
-  }
-  
-  #prevBtn {
-    left: 10px;
-  }
-  
-  #nextBtn {
-    right:10px;
-    }
-
-
-
-
-
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+#prevBtn {
+    left: 0;
+}
+#nextBtn {
+    right:0;
+}
+/*footer style*/
 .footer{
     background-color: rgb(91, 91, 224);
     color: white;
 }
-
-.footer .title{
+.footer-content .col{
+    padding: 15px;
+}
+.footer-head {
     text-align: center;
     padding: 10px;
+}
+.footer-head img{
+    border-radius: 50%;
+    margin: 20px;
 }
 .footer-content{
     display: flex;
@@ -234,36 +249,187 @@ img {
 }
 .footer-content ul {
     padding: 0;
-    margin: 0;
 }
 .footer-content ul li{
-    list-style-type: none;
+    padding: 8px;
+}
+.footer-content h6{
+    padding: 8px;
 }
 .footer-content button{
     background-color: rgb(34, 34, 34);
     color: white;
     font-weight: 500;
+    margin: 5px;
 }
 .info ul li{
-    list-style-type: none;
-    display: inline;
+    display: inline-block; 
 }
-
 .footer-element2{
     background-color: blue;
-    justify-content: space-between;
-}
-.footer-element2 .row{
-    margin: 0  50px !important;
-    align-items: center;
-}
-.centre-lists{
     text-align: center;
-}
-.centre-elemnts{
-    align-items: flex-start !important;
 }
 .p-options{
     border: 1px solid white;
     padding: 10px;
+}
+.footer-element2 .element{
+    display: inline-block;
+    margin: 20px;
+}
+
+@media (max-width: 1300px) {
+    /*header*/
+    .header div{
+        margin: 0 5px;
+    }
+    .middle input{
+        padding: 10px 70px;
+        
+    }
+    .left-side button{
+        padding: 15px;
+    }
+    .ul-nav>li{
+        margin: 5px 7px;
+    }
+    /* hero-container*/
+    .hero {
+        display: grid;
+        grid-template-columns: 700px 330px;  
+    }
+}
+@media (max-width: 1050px) {
+    /*header*/
+    .header div{
+        margin: 0 5px;
+    }
+    .middle input{
+        padding: 5px 25px;
+        
+    }
+    .left-side button{
+        padding: 5px;
+    }
+    .ul-nav>li{
+        margin: 3px 5px;
+    }
+    /* hero-container*/
+    .hero {
+        display: grid;
+        grid-template-columns: 600px 280px;  
+    }
+
+}
+@media (max-width: 950px) {
+    /*header*/
+    .header div{
+        margin: 0 ;
+    }
+    .middle input{
+        padding: 0;
+        font-size: 0.9rem;
+        
+    }
+    .left-side button{
+        padding: 5px;
+    }
+    .ul-nav>li{
+       padding: 0 3px;
+    }
+    .service-options .right-service{
+        font-size: 0.8rem;
+    }
+    .right-service{
+        margin:  0 15px;
+    }
+    .right-service ul li{
+        margin:0;
+    } 
+    /* hero-container*/
+    .hero {
+        display: grid;
+        grid-template-columns: 500px 230px;  
+    }
+    
+}
+
+@media (max-width: 768px) {
+    /*header*/
+    .header .left-service {
+        display: block; 
+        padding-top: 10px;
+    }
+    .header .left-side{
+        display: none;
+    }
+    .header .mobile{
+        display:flex;
+    }
+    .menu .middle{
+        display: none;
+    }
+    .header .menu{
+        justify-content: space-around;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    .service-options .right-service , .service-options .left-service  {
+        display: none;
+    }
+    
+    .show-mobile {
+        display: block;
+    }
+    .right-service ul li{
+        color: white;
+        padding: 10px;
+        line-height: 30px;
+        top: 0;
+        font-size: 24px;
+    }
+    .ul-nav li{
+        padding: 0 10px;
+    }
+    .left-mobile.active { 
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 100vh;
+        z-index: 100;
+        box-sizing: border-box; 
+    }
+    
+    .left-mobile.active {
+        display:block;
+    }
+    .vertical-menu {
+        padding: 0;
+        margin: 0;
+        display: flex; 
+        flex-direction: row;
+        justify-content: left;
+    }
+    .vertical-menu   button {
+        cursor: pointer;
+        font-size: 18px; 
+        padding: 5px; 
+        border:none;
+        background-color: transparent;
+    } 
+    /* hero-container*/
+    .hero {
+        display: grid;
+        grid-template-columns: auto  
+    }
+    .bars{
+        display: inline;
+    }
+    /*carousel*/
+    .slide {
+        flex: 0 0 30% !important; 
+    }
 }
